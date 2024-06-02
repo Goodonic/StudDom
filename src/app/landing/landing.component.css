@@ -14,9 +14,10 @@
 .logo{
   width: 14lvw;
   height: 30lvh;
-  margin-left: 43lvw;
-  margin-top: 30lvh;
+  margin-left: 48lvw;
+  margin-top: 35lvh;
   background-image: url("../../assets/images/landing/logo.png");
+  zoom: 0.9;
 }
 
 #googlePlayImg{
