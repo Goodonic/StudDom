@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Bowler';
+  src: url('assets/fonts/Bowler/BOWLER-Regular.woff2') format('woff2'), url('assets/fonts/Bowler/BOWLER-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('assets/fonts/Gilroy/Gilroylight.woff2') format('woff2'), url('assets/fonts/Gilroy/Gilroylight.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+div.scrollDiv::-webkit-scrollbar{
+  width: 12px;
+}
+/*div.objectListContainer::-webkit-scrollbar-track {*/
+/*  background: orange;        !* цвет дорожки *!*/
+/*}*/
+div.scrollDiv::-webkit-scrollbar-thumb {
+  background-color: #AD00FF;    /* цвет плашки */
+  border-radius: 20px;       /* закругления плашки */
+  border: 3px solid orange;  /* padding вокруг плашки */
+}
+.rightTitle {
+  justify-content: end;
+}
+
+body{
+  margin: 0;
+  border: 0;
+  padding: 0;
+}

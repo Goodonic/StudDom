@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://libs.zappar.com/zappar-aframe/2.2.2/zappar-aframe.js"></script>
+  <script>
+    mode = 0;
+    console.log('work')
+    // document.getElementById('shineObj').setAttribute('visible','true')
+    // document.getElementById('shineObj2').setAttribute('visible','false')
+    AFRAME.registerComponent('next', {
+      init: function () {
+        this.el.addEventListener('click', (ev) => {
+          console.log('click',ev)
+          if (mode == 0){
+            document.getElementById('shineObj').setAttribute('visible','false')
+            document.getElementById('shineObj2').setAttribute('visible','true')
+            mode = 1
+          }
+          else{
+            document.getElementById('shineObj').setAttribute('visible','true')
+            document.getElementById('shineObj2').setAttribute('visible','false')
+            mode = 0
+          }
+
+        });
+      },
+    });
+    AFRAME.registerComponent('back', {
+      init: function () {
+        this.el.addEventListener('click', (ev) => {
+          console.log('click',ev)
+          if (mode == 0){
+            document.getElementById('shineObj').setAttribute('visible','false')
+            document.getElementById('shineObj2').setAttribute('visible','true')
+            mode = 1
+          }
+          else{
+            document.getElementById('shineObj').setAttribute('visible','true')
+            document.getElementById('shineObj2').setAttribute('visible','false')
+            mode = 0
+          }
+
+        });
+      },
+    });
+
+  </script>
+  <script>
+    AFRAME.registerComponent('phone', {
+      init: function (){
+        this.el.addEventListener('click', (ev) => {
+
+          // window.location.href = "tel:+79782619208"
+          window.open("tel:+79782619208", "_blank");
+
+        })
+      }
+    })
+    AFRAME.registerComponent('site', {
+      init: function (){
+        this.el.addEventListener('click', (ev) => {
+          window.open("https://margic.ru", "_blank");
+          // window.location.href = ""
+        })
+      }
+    })
+    AFRAME.registerComponent('email', {
+      init: function (){
+        this.el.addEventListener('click', (ev) => {
+
+          // window.location.href = "mailto:margic@margic.ru"
+          window.open("mailto:margic@margic.ru", "_blank");
+        })
+      }
+    })
+  </script>
+</head>
+<body>
+<a-scene >
+  <a-assets >
+    <img id="screen"  src="../assets/images/card/tablet/Screen.png">
+    <img id="shine"  src="../assets/images/card/tablet/Screen_Shine.png">
+    <img id="shine2"   src="../assets/images/card/tablet/Screen_Shine2.png">
+    <img id="girlRight"  src="../assets/images/card/girls/rightGirl.png" >
+    <img id="girlLeft"  src="../assets/images/card/girls/leftGirl.png">
+    <img id="girlLeftBack"  src="../assets/images/card/girls/backLeft.png">
+    <img id="girlRightBack"  src="../assets/images/card/girls/backRight.png.png">
+    <img id="button"  src="../assets/images/card/tablet/button.png">
+    <img id="buttonAct"  src="../assets/images/card/tablet/buttonActive.png">
+    <img id="phoneImg"  src="../assets/images/card/links/phone.png">
+    <img id="emailImg"  src="../assets/images/card/links/email.png">
+    <img id="siteImg"  src="../assets/images/card/links/site.png">
+  </a-assets>
+  <a-entity zappar-permissions-ui id="permissions">
+    <!-- Remove the text entity to use Zappar's default permission denied UI -->
+    <a-entity text="value: Please reload the page, accepting the camera permissions." position="0 0 -2"></a-entity>
+  </a-entity>
+
+  <a-entity zappar-compatibility-ui id="compatibility">
+    <!-- Remove the text entity to use Zappar's default compatibility UI -->
+    <a-entity text="value: Browser incompatible!" position="0 0 -2"></a-entity>
+  </a-entity>
+
+  <a-entity camera zappar-camera cursor="rayOrigin: mouse; fuse: false;"
+            raycaster="objects: .interactive"></a-entity>
+
+  <!-- create your content here. just a box for now -->
+  <!--  <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>-->
+  <a-entity zappar-image="target: https://cdn.glitch.global/8d7e7f9a-0802-4a50-bb28-c1ea52e1d00b/6.zpt?v=1646737940481">
+    <a-image   src="#screen" position="0 0 0" scale="2.7 2" > </a-image>
+    <a-image id="shineObj" src="#shine" position="0 0 0.05" scale="2.5 1.8" > </a-image>
+    <a-image id="shineObj2" src="#shine2" position="0 0 0.05" scale="2.5 1.8" > </a-image>
+    <a-image  src="#girlLeft" position="-1.8 -0.1 0" scale="1 1.6"> </a-image>
+    <a-image class="interactive" id="next" next src="#button" position="1.5 0 0.06" material="alphaTest: 0.5" scale="0.3 0.3" rotation="0 0 180"> </a-image>
+    <a-image class="interactive" id="back" back src="#button" position="-1.5 0 0.06" scale="0.3 0.3" rotation="0 0 0"> </a-image>
+    <a-image  src="#girlRight" position="1.8 -0.1 0.05" scale="1 1.6"  > </a-image>
+    <a-image class="interactive" id="phone" src="#phoneImg" phone position="-1.7 -1.9 0.05" scale="2.2 1.7" rotation="0 0 0"> </a-image>
+    <a-image class="interactive" id="email" src="#emailImg" email position="0 -1.9 0.05" scale="2.2 1.7" rotation="0 0 0"> </a-image>
+    <a-image class="interactive" id="site" src="#siteImg" site position="1.7 -1.9 0.05" scale="2.2 1.7" rotation="0 0 0"> </a-image>
+  </a-entity>
+
+  <!-- define a camera which will move according to the marker position -->
+
+
+
+
+</a-scene>
+
+</body>
+</html>
