@@ -14,17 +14,29 @@
 .logo{
   width: 17lvw;
   height: 36lvh;
-  margin-left: 47lvw;
+  margin-left: 49lvw;
   margin-top: 35lvh;
-  background-image: url("../../assets/images/landing/logo.png");
+  /*background-image: url("../../assets/images/landing/logo.png");*/
   zoom: 0.9;
 }
 
 #googlePlayImg{
   width: 413px;
   height: 298px;
-  margin-left: 15lvw;
+  margin-left: 5lvw;
   background-image: url("../../assets/images/landing/googleplay.png");
+}
+/*#tgImg{*/
+/*  width: 200px;*/
+/*  height: 200px;*/
+/*  margin-left: 5lvw;*/
+/*  background-image: url("../../assets/images/landing/tgLink.png");*/
+/*}*/
+
+.telegram{
+  margin-top: 8lvh;
+  margin-left: 8lvh;
+
 }
 
 .firstTitle {
@@ -370,7 +382,8 @@
   text-align: center;
 }
 .Bye{
-  margin-left: 13lvw;
+
+
 }
 .contacts{
   text-align: center;
